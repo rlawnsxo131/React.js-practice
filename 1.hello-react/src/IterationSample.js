@@ -25,6 +25,18 @@ class IterationSample extends Component {
     //편의상 name의 레퍼런스를 미리 만든다.
     const { names } = this.state;
 
+    /*
+    배열을 자르는 내장 함수 slice와
+    전개 연산자(...)를 사용하여 index 번째 값을 제외한 값들을
+    배열에 넣어준다.
+    */
+    // this.setState({
+    //   names: [
+    //     ...names.slice(0,index),
+    //     ...names.slice(index+1, names.length)
+    //   ]
+    // })
+
     this.setState({
         //fileter로 index 전개를 제외한 원소만 있는 새 배열 생성
         names: names.filter((item, idx) => idx !== index )
