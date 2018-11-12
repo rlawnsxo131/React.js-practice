@@ -298,7 +298,12 @@ module.exports = {
           {
             test: sassRegex,
             exclude: sassModuleRegex,
-            use: getStyleLoaders({ importLoaders: 2 }, 'sass-loader'),
+            use: getStyleLoaders({ importLoaders: 2 }).concat({
+              loader: require.resolve('sass-loader'),
+              options: {
+                includePaths: [paths.appSrc + '/styles']
+              }
+            })
           },
           // Adds support for CSS Modules, but using SASS
           // using the extension .module.scss or .module.sass
