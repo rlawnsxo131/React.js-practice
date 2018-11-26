@@ -56,7 +56,7 @@ export default handleActions({
         //updateIn으로 현재 값을 참조하여 반대 값으로 설정한다.
         /*
         updateIn을 사용하지 않는다면 다음과 같이 작성할 수도 있다.
-        return state.setIn([index, 'done'], !state.getIn([0, index]));
+        return state.setIn([index, 'done'], !state.getIn([index, 'done']));
         */
         return state.updateIn([index, 'done'], done => !done);
     },
