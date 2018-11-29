@@ -26,7 +26,7 @@ const initialState = {
 
 export default handleActions({
     ...pender({
-        type: GET_POST, //type이 주어지면 이 type에 접미사를 붙인
+       type: GET_POST, //type이 주어지면 이 type에 접미사를 붙인
                         //액션 핸들러들이 담긴 객체를 만든다.
         /*요청 중일 때와 실패했을 때 추가로 해야 할 작업이 있다면
           이렇게 onPending 과 onFailure를 추가하면 된다.
@@ -42,9 +42,17 @@ export default handleActions({
                    body
                }
            }
-       }
+       },
        //함수를 생략했을 때 기본 값으로는 (state, action) => state를 설정한다.
        //(state를 그대로 반환한다는 것이다.)
+       onCancel: (state, action) => {
+           return {
+               data: {
+                   title: '취소됨',
+                   body: '취소됨'
+               }
+           }
+       }
     })
 }, initialState);
 
