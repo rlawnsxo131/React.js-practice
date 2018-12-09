@@ -11,8 +11,14 @@ const devtools = isDev && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 const composeEnhancers = devtools || compose;
 
 //preloadedState는 추후 서버사이드 렌더링을 했을 때 전달받는 초기 상태이다.
-const configure = (preloadedState) => createStore(reducers, preloadedState, composeEnhancers(
-    applyMiddleware(...middlewares)
-));
+const configure = (preloadedState) =>
+  createStore(
+    reducers,
+    preloadedState,
+    composeEnhancers(
+      window.devToolsExtension && window.devToolsExtension(),
+      applyMiddleware(...middlewares)
+    )
+  );
 
 export default configure;
