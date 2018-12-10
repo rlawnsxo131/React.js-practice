@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const ListWrapper = ({children}) => (
-  <div classNames={cx('list-wrapper')}>
+  <div className={cx('list-wrapper')}>
     {children}
   </div>
 )
