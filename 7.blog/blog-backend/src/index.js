@@ -25,7 +25,7 @@ const router = new Router();
 // 라우터 설정
 router.use('/api', api.routes()); // api 라우트 적용
 
-// 라우터 적용 전에 bobyPaarser 적용
+// 라우터 적용 전에 bobyParser 적용
 app.use(bodyParser());
 
 // app 인스턴스에 라우터 적용

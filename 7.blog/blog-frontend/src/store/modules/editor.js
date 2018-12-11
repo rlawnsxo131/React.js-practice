@@ -9,11 +9,15 @@ import * as api from 'lib/api';
 const INITIALIZE = 'editor/INITIALIZE';
 const CHANGE_INPUT = 'editor/CHANGE_INPUT';
 const WRITE_POST = 'editor/WRITE_POST';
+const GET_POST = 'editor/GET_POST';
+
 
 // action creators
 export const initialize = createAction(INITIALIZE);
 export const changeInput = createAction(CHANGE_INPUT);
 export const writePost = createAction(WRITE_POST, api.writePost);
+export const getPost = createAction(GET_POST, api.getPost);
+
 
 // initial state
 const initialState = Map({
@@ -31,10 +35,10 @@ export default handleActions({
     return state.set(name, value);
   },
   ...pender({
-    type:WRITE_POST,
+    type: WRITE_POST,
     onSuccess: (state, action) => {
       const { _id } = action.payload.data;
       return state.set('postId', _id);
     }
-  })
-}, initialState);
+  }),
+}, initialState)
