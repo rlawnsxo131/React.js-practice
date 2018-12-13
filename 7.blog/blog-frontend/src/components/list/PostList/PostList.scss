@@ -10,13 +10,13 @@
       margin: 0;
       color: $oc-gray-8;
       a {
-        transition: all .15s ease-in; // 스타일 바뀔 때 애니매이션 효과
+        transition: all .15s ease-in; // 스타일 바뀔 때 애니메이션 효과
         border-bottom: 1px solid transparent;
       }
       a:hover {
         color: $oc-blue-6;
-        //마우스 호버할 때 밑줄(밑줄과 글자 사이 여백, 얇은 밑줄을 위해  border-bottom 사용)
-        border-bottom: 1px solid $oc-blue-6;
+        // 마우스 호버 시 밑줄(밑줄과 글자 사이 여백, 얇은 밑줄을 위해 border-bottom 사용)
+        border-bottom: 1px solid $oc-blue-6; 
       }
     }
     .date {
@@ -41,7 +41,7 @@
       }
     }
     &:hover {
-      // 마우스 호버할 때 배경색 변경
+      // 호버 시 배경색 변경
       background: rgba($oc-blue-6, 0.05);
     }
   }

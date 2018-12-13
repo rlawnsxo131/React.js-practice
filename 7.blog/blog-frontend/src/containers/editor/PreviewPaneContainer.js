@@ -8,8 +8,8 @@ class PreviewPaneContainer extends Component {
     return (
       <PreviewPane title={title} markdown={markdown}/>
     );
-  };
-};
+  }
+}
 
 export default connect(
   (state) => ({

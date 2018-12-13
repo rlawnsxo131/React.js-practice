@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import * as editorActions from 'store/modules/editor';
 
 class EditorPaneContainer extends Component {
-  
+
   handleChangeInput = ({name, value}) => {
     const { EditorActions } = this.props;
     EditorActions.changeInput({name, value});
   }
-
+  
   render() {
     const { title, tags, markdown } = this.props;
     const { handleChangeInput } = this;
@@ -21,10 +21,10 @@ class EditorPaneContainer extends Component {
         markdown={markdown}
         tags={tags}
         onChangeInput={handleChangeInput}
-      /> 
+      />
     );
-  };
-};
+  }
+}
 
 export default connect(
   (state) => ({
@@ -36,4 +36,3 @@ export default connect(
     EditorActions: bindActionCreators(editorActions, dispatch)
   })
 )(EditorPaneContainer);
-

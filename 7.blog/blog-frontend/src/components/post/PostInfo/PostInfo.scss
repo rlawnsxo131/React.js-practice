@@ -15,13 +15,13 @@
       font-weight: 300;
       font-size: 3rem;
       margin: 0;
-      word-wrap: break-word; //내용이 너무 길면 다음 줄에 작성
+      word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
     }
     .tags {
       margin-top: 1rem;
       font-size: 1.25rem;
       font-weight: 500;
-      a {
+      a { 
         &:hover {
           text-decoration: underline;
         }
@@ -40,7 +40,7 @@
 
   @include media("<large") {
     .info {
-      h1 {
+      h1 { 
         font-size: 2rem;
       }
       .tags, .date {
@@ -50,17 +50,17 @@
     }
   }
   @include media("<medium") {
-      height: auto;
-      padding-bottom: 4rem;
-      .info {
-        padding-top: 0;
-        margin: 0;
-        .tags {
-          margin-top: 0.25rem;
-        }
-        .tags, .date {
-          font-size: 0.85rem;
-        }
+    height: auto;
+    padding-bottom: 4rem;
+    .info {
+      padding-top: 0;
+      margin: 0;
+      .tags {
+        margin-top: 0.25rem;
       }
+      .tags, .date {
+        font-size: 0.85rem;
+      }
+    }
   }
 }

@@ -13,7 +13,7 @@ export const getPost = createAction(GET_POST, api.getPost);
 
 // initial state
 const initialState = Map({
-  post:Map({})
+    post:Map({})
 });
 
 // reducer

@@ -7,26 +7,26 @@ const cx = classNames.bind(styles);
 class EditorTemplate extends Component {
   state = {
     leftPercentage: 0.5
-  };
+  }
 
   // separator 클릭 후 마우스를 움직이면 그에 따라 leftPercentage 업데이트
   handleMouseMove = (e) => {
     this.setState({
       leftPercentage: e.clientX / window.innerWidth
     });
-  };
+  }
 
   // 마우스를 뗐을 때 등록한 이벤트 제거
   handleMouseUp = (e) => {
     document.body.removeEventListener('mousemove', this.handleMouseMove);
     window.removeEventListener('mouseup', this.handleMouseUp);
-  };
+  }
 
-  // separator 클릭할 때
+  // separator 클릭 시
   handleSeparatorMouseDown = (e) => {
     document.body.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('mouseup', this.handleMouseUp);
-  };
+  }
 
   render() {
     const { header, editor, preview } = this.props;
@@ -48,7 +48,7 @@ class EditorTemplate extends Component {
 
     return (
       <div className={cx('editor-template')}>
-        {header}
+        { header }
         <div className={cx('panes')}>
           <div className={cx('pane', 'editor')} style={leftStyle}>
             {editor}
@@ -56,14 +56,14 @@ class EditorTemplate extends Component {
           <div className={cx('pane', 'preview')} style={rightStyle}>
             {preview}
           </div>
-          <div
-            className={cx('separator')}
+          <div 
+            className={cx('separator')} 
             style={separatorStyle}
-            onMouseDown={handleSeparatorMouseDown} />
+            onMouseDown={handleSeparatorMouseDown}/>
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default EditorTemplate;

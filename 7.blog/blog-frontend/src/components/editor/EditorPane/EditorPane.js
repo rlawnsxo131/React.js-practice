@@ -45,7 +45,7 @@ class EditorPane extends Component {
 
   handleChangeMarkdown = (doc) => {
     const { onChangeInput } = this.props;
-    this.cursor = doc.getCursor(); // 텍스트 cursor의 위치를 저장한다
+    this.cursor = doc.getCursor(); // 텍스트 cursor의 위치를 저장합니다
     onChangeInput({
       name: 'markdown',
       value: doc.getValue()
@@ -53,9 +53,9 @@ class EditorPane extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // markdown이 변경되면 에디터의 값도 변경해준다.
+    // markdown이 변경되면 에디터의 값도 변경해줍니다.
     // 이 과정에서 텍스트 커서의 위치가 초기화되기 때문에, 
-    // 저장해둔 커서의 위치가 있으면 해당 위치로 설정한다.
+    // 저장해둔 커서의 위치가 있으면 해당 위치로 설정합니다.
     if(prevProps.markdown !== this.props.markdown) {
       const { codeMirror, cursor } = this;
       if(!codeMirror) return; // 인스턴스가 아직 안 만들어진 경우
