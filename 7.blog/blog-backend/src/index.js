@@ -15,7 +15,7 @@ const {
 } = process.env;
 
 mongoose.Promise = global.Promise; // Node의 Promise를 사용하도록 설정
-mongoose.connect(mongoURI).then(() => {
+mongoose.connect(mongoURI, {useNewUrlParser: true}).then(() => {
   console.log('connected to mongodb');
 }).catch((e) => {
   console.error(e);
