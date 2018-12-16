@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 const PostItem = ({title, body, publisheDate, tags, id}) => {
   const tagList = tags.map(
-    tag => <Link ket={tag} to={`/tag/${tag}`}>#{tag}</Link>
+    tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
   );
   return (
     <div className={cx('post-item')}>
