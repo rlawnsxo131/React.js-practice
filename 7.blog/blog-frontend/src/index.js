@@ -5,4 +5,4 @@ import * as serviceWorker from './serviceWorker';
 import 'styles/base.scss';
 
 ReactDOM.render(<Root />, document.getElementById('root'));
-serviceWorker.unregister();
+serviceWorker.unregister(); //register(); 로 변경하면 켜진다.
