@@ -1,5 +1,5 @@
-/config
 node_modules
 uploads
 *.log
 .env
+/dist
