@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSample } from '../context/sample';
+import { useSample } from '../contexts/sample';
 
 const Receives = ({ value }) => {
   return (
@@ -10,4 +10,3 @@ const Receives = ({ value }) => {
 };
 
 export default useSample(Receives);
-
