@@ -53,16 +53,6 @@ class EventPractice extends Component {
 
 export default EventPractice;
 
-function a(name) {
-    this.name = name;
-}
-
-a.prototype.say = function() {
-    return this.name
-}
-
-
-
 
 
 

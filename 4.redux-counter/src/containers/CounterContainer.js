@@ -1,3 +1,4 @@
+// 현재 사용하지 않는 코드 참조용으로 남겨둠
 import Counter from '../components/Counter';
 import * as actions from '../actions';
 import { connect } from 'react-redux';

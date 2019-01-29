@@ -119,5 +119,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "react-test-render": "^1.1.1"
   }
 }
