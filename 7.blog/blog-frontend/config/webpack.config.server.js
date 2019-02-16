@@ -81,10 +81,15 @@ module.exports = {
   resolve: {
     // NODE_PATH가 제대로 작동하도록 production에서 사용한 설정을
     // 그대로 넣어 주었다.
+    /*
+      'node_modules',
+      'C:\\React_js\\7.blog\\blog-frontend\\node_modules',
+      'C:\\React_js\\7.blog\\blog-frontend\\src'
+    */
     modules: ['node_modules', paths.appNodeModules].concat(
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     )
   },
-  // 여기서는 환경변수 관련 플러그인만 적용해주면 된다.
+  // 여기서는 환경변수 관련 플러그인만 적용해주면 된다.(전역으로 사용할 상수 설정 /src)
   plugins: [new webpack.DefinePlugin(env.stringified)]
 };
