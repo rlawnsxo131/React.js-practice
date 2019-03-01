@@ -1,7 +1,6 @@
 const Koa = require('koa');
 const serve = require('koa-static');
 const path = require('path');
-const fs = require('fs');
 const app = new Koa();
 
 const render = require('./render');
