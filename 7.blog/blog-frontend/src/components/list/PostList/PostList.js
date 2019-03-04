@@ -11,6 +11,7 @@ const PostItem = ({title, body, publisheDate, tags, id}) => {
   const tagList = tags.map(
     tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
   );
+
   return (
     <div className={cx('post-item')}>
       <h2><Link to={`/post/${id}`}>{title}</Link></h2>
