@@ -21,8 +21,11 @@ const render = (ctx) => {
       </StaticRouter>
     </Provider>
   );
-
-  return html;
+  // 스토어와, 렌더링된 문자열 결과물을 반환한다.
+  return {
+    html,
+    state: store.getState()
+  }
 }
 
 export default render;

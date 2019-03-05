@@ -12,7 +12,8 @@
     "koa-router": "^7.4.0",
     "koa-session": "^5.10.0",
     "koa-static": "^5.0.0",
-    "mongoose": "^5.3.14"
+    "mongoose": "^5.3.14",
+    "serialize-javascript": "^1.6.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
