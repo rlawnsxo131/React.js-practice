@@ -1,3 +1,4 @@
+/* 컴포넌트를 비동기적으로 import 하는 함수를 파라미터로 받는다 */
 import React from 'react';
 
 export default function asyncComponent(getComponent) {
