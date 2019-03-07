@@ -6,6 +6,7 @@ import configure from 'store/configure';
 import routes from './routes';
 import axios from 'axios';
 import transit from 'transit-immutable-js';
+import { Helmet } from 'react-helmet';
 
 import App from 'components/App';
 
@@ -46,22 +47,33 @@ const render = async (ctx) => {
     console.error(e);
   }
 
+  // context(staticContext) 값을 빈 객체로 설정한다.
+  const context = {};
+
   // renderToString은 렌더링된 결과물을 문자열로 만들어 준다.
   // 서버에서는 BrowserRouter 대신에 StaticRouter를 사용한다.
   const html = ReactDOMServer.renderToString(
     <Provider store={store}>
-      <StaticRouter location={url}>
+      <StaticRouter location={url} context={context}>
         <App/>
       </StaticRouter>
     </Provider>
   );
+  
+  // isNotFound 값이 true라면
+  if(context.isNotFound) {
+    ctx.status = 404; // HTTP 상태를 404로 설정해 준다.
+  }
+  const helmet = Helmet.renderStatic();
+
   const preloadedState = JSON.stringify(transit.toJSON(store.getState()))
                              .replace(/</g, '\\u003c');
 
   // 스토어와, 렌더링된 문자열 결과물을 반환한다.
   return {
     html,
-    preloadedState
+    preloadedState,
+    helmet
   }
 }
 
