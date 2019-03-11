@@ -71,7 +71,7 @@ module.exports = async (ctx) => {
     // client쪽 ssr.js 에는 ctx값을 받아 url과 origin 값을 사용하는 것이 명시되어 있다.
     // 즉, render 모듈의 인자로 ctx를 넣어주면 url과 origin 값을 각각 바인딩해 사용한다.
     const { html: rendered, preloadedState , helmet } = await render(ctx);
-    const page = await buildHtml(rendered, preloadedState, helmet);
+    const page = buildHtml(rendered, preloadedState, helmet);
     ctx.body = page;
   } catch(e) {
     console.error(e)
