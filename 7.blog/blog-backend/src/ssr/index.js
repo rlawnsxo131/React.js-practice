@@ -47,12 +47,12 @@ function buildHtml(rootHtml, preloadedState, helmet) {
 
   // 커스텀 스크립트 적용 + 스플리팅된 스크립트 로딩
   // 해당 정규식은 yarn build 결과물에 따라 달라질 수 있다.
-  //<script src="/static/js/main.e4631473.chunk.js"></script>
+  // <script src="/static/js/main.e4631473.chunk.js"></script>
   const mainScript = html.match(
     /<script src="\/static\/js\/main..*.chunk.js"><\/script>/
   )[0];
 
-  //<script src="/static/js/7.554a7a3d.chunk.js"></script><script src="/static/js/main.e4631473.chunk.js"></script>
+  // <script src="/static/js/7.554a7a3d.chunk.js"></script><script src="/static/js/main.e4631473.chunk.js"></script>
   const seven = html.match(
     /<script src="\/static\/js\/7..*chunk.js"><\/script>/
   )[0]; 

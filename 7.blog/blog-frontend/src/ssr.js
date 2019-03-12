@@ -64,7 +64,7 @@ const render = async (ctx) => {
   if(context.isNotFound) {
     ctx.status = 404; // HTTP 상태를 404로 설정해 준다.
   }
-  const helmet = Helmet.renderStatic();
+  const helmet = Helmet.renderStatic(); // 한번 렌더링 작업을 완료한후 실행(생략시 메모리 누수)
 
   const preloadedState = JSON.stringify(transit.toJSON(store.getState()))
                              .replace(/</g, '\\u003c');
