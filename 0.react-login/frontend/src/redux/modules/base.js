@@ -13,7 +13,7 @@ const initialState = Map({
 
 export default handleActions({
   [SET_HEADER_VISIBILITY] : (state, action) => {
-      state.setIn(['header', 'visible'], action.payload);
+    return state.setIn(['header', 'visible'], action.payload);
   }
 }, initialState);
 

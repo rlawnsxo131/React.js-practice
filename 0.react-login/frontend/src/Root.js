@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import App from './App';
+import { hot } from 'react-hot-loader';
 
 const Root = ({store}) => {
   return (
@@ -13,4 +14,4 @@ const Root = ({store}) => {
   );
 }
 
-export default Root;
+export default hot(module)(Root);
