@@ -1,0 +1,21 @@
+table {
+  border: 1px solid black;
+}
+th {
+  border: 1px solid black;
+}
+tr {
+  border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:hover {
+  cursor: pointer;
+  color: gray;
+}
