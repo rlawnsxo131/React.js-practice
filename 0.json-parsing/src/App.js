@@ -19,24 +19,24 @@ class App extends Component {
   sido = () => {
     // 시도만 골라낸다
     const a = this.state.testData.map(val => {
-      return val.sido
+      return val.sido;
     });
     // 시도중 중복값을 골라낸다.
     const b = a.filter((val, idx, arr) => {
-      return arr.indexOf(val) === idx
+      return arr.indexOf(val) === idx;
     });
 
     return b;
   }
 
-  test = () => {
+  gugun = () => {
     const a = this.sido();
 
     // 같은 시도에 솎한 중복값을 묶어낸다.
     const b =  a.map(val => {
-      let testVal = val
+      let testVal = val;
       return this.state.testData.filter(val => {
-        return val.sido === testVal
+        return val.sido === testVal;
       })
     })
     return b
@@ -46,8 +46,8 @@ class App extends Component {
     await this.setState((state) => ({
       testData: state.testData.filter((val, idx) => val !== value)
     }))
-    console.log(this.state.testData);
   }
+
 
   render() {
 
@@ -57,10 +57,9 @@ class App extends Component {
       )
     });
 
-    const tdGugun = this.test().map((val, idx) => {
+    const tdGugun = this.gugun().map((val, idx) => {
       return (
         <td key={idx}>
-          {val.sido}
           {
             val.map((val, idx) => (
               <span key={idx} onClick={() => this.delete(val)}>
@@ -87,6 +86,7 @@ class App extends Component {
             </tr>
           </tbody>
         </table>
+        <button onClick={this.anotherList}>test</button>
       </div>
     )
   }
